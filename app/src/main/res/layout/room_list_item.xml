@@ -21,7 +21,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가격 자리"
@@ -40,22 +39,10 @@
                 android:layout_height="wrap_content"
                 android:textColor="#999999"
                 android:text="설명칸"/>
-
-
-
-
-
         </LinearLayout>
 
 
-
-
-
-
     </LinearLayout>
-
-
-
 
 
 
