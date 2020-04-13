@@ -2,6 +2,7 @@ package kun.hee.listveiw_20200409
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kun.hee.listveiw_20200409.adapters.RoomAdaper
 import kun.hee.listveiw_20200409.datas.Room
@@ -28,5 +29,17 @@ class MainActivity : AppCompatActivity() {
         mRoomAdaper = RoomAdaper(this, R.layout.room_list_item, roomList)
                                     // 어느화면, 어떤List(Int), 어떤목록뿌릴래 ?
         roomListView.adapter = mRoomAdaper
+
+        roomListView.setOnItemClickListener { parent, view, position, id ->
+//          몇번줄을 눌렀는지 Toast로 출력
+            Toast.makeText(this, "${position+1}번 줄 클릭", Toast.LENGTH_SHORT).show() // 첫번째줄 0이니깐.
+        }
+
+        roomListView.setOnItemLongClickListener { parent, view, position, id ->
+            Toast.makeText(this, "${position+1}번 줄을 오래 클릭.",Toast.LENGTH_SHORT).show()
+            return@setOnItemLongClickListener true
+        }
+
+
     }
 }
