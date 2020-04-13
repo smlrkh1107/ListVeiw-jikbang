@@ -39,7 +39,8 @@ class RoomAdaper(context:Context, resId:Int, list:ArrayList<Room>) : ArrayAdapte
 
 //         가격이 1만 이상이면 ??억 ? 이렇게 나오기.
          if (data.price >= 10000) {
-             priceTxt.text = "${data.price/10000}억 ${String.format("%,d", data.price%10000)}" }
+             if (data.price%10000 == 0){ priceTxt.text = "${data.price/10000}억"}
+             else  priceTxt.text = "${data.price/10000}억 ${String.format("%,d", data.price%10000)}" }
          else priceTxt.text = String.format("%,d", data.price)
 
 //        주소와 층수=> "주소, 층수(상황마다 다른값)"
