@@ -23,6 +23,8 @@ class RoomAdaper(context:Context, resId:Int, list:ArrayList<Room>) : ArrayAdapte
         }
 
         val row = tempRow!!  // !! 는 tempRow가 절대 null이 아니야!
+         // row 변수를 이용하여 각 줄에 맞는 Data 가공.
+
         return row
     }
 
