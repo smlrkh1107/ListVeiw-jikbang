@@ -2,10 +2,13 @@ package kun.hee.listveiw_20200409
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
+import kun.hee.listveiw_20200409.adapters.RoomAdaper
 import kun.hee.listveiw_20200409.datas.Room
 
 class MainActivity : AppCompatActivity() {
 
+    var mRoomAdaper:RoomAdaper? = null
     val roomList = ArrayList<Room>()
 
 
@@ -22,5 +25,8 @@ class MainActivity : AppCompatActivity() {
         roomList.add(Room(10000, "경기도 남양주시", 0, "단독주택"))
         roomList.add(Room(5500, "서울시 광진구", -1, "오피스텔"))
 
+        mRoomAdaper = RoomAdaper(this, R.layout.room_list_item, roomList)
+                                    // 어느화면, 어떤List(Int), 어떤목록뿌릴래 ?
+        roomListView.adapter = mRoomAdaper
     }
 }
